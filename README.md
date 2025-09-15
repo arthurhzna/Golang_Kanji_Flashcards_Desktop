@@ -40,6 +40,17 @@ Aplikasi flashcard sederhana untuk belajar kosakata bahasa Jepang dengan antarmu
    
    Save as `.xlsx` or `.xls` format
 
+## Excel File Format
+
+Your Excel file must have the following structure:
+- **Sheet1** with columns:
+  - Column A: Kanji
+  - Column B: Hiragana  
+  - Column C: Reading (romaji)
+  - Column D: Meaning (Indonesian/English)
+- First row as header (will be ignored)
+- Supports both `.xlsx` and `.xls` formats
+
 ## How to Run
 
 ### Run directly
@@ -85,22 +96,11 @@ The application will display a welcome screen asking you to select an Excel file
 ### Step 1: Welcome Screen
 ![Select Excel File](img/select_1.png)
 
-### Step 2: File Selection Dialog
+### Step 2: File Selection
 ![Browse Files](img/select2_2.png)
 
 ### Step 3: Flashcard Interface
 ![Flashcard View](img/flashcard.png)
-
-## Excel File Format
-
-Your Excel file must have the following structure:
-- **Sheet1** with columns:
-  - Column A: Kanji
-  - Column B: Hiragana  
-  - Column C: Reading (romaji)
-  - Column D: Meaning (Indonesian/English)
-- First row as header (will be ignored)
-- Supports both `.xlsx` and `.xls` formats
 
 ## Troubleshooting
 
