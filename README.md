@@ -45,10 +45,7 @@ go run main.go
 ### Compile to executable
 ```bash
 # For Windows
-go build -o flashcard.exe main.go
-
-# For other systems
-go build -o flashcard main.go
+go build -ldflags="-H windowsgui" -o flashcard.exe main.go
 ```
 
 After compilation, you can simply double-click the `flashcard.exe` file to run it.
