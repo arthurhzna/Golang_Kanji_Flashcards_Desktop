@@ -2,8 +2,6 @@
 
 A simple flashcard application for learning Japanese vocabulary with a GUI interface using Fyne.
 
-Aplikasi flashcard sederhana untuk belajar kosakata bahasa Jepang dengan antarmuka GUI menggunakan Fyne. Kini mendukung upload file Excel!
-
 ## Features
 
 - 📚 Display Japanese vocabulary (Kanji, Hiragana, Reading, Meaning)
