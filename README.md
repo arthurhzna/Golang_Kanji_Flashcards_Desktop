@@ -2,13 +2,16 @@
 
 A simple flashcard application for learning Japanese vocabulary with a GUI interface using Fyne.
 
+Aplikasi flashcard sederhana untuk belajar kosakata bahasa Jepang dengan antarmuka GUI menggunakan Fyne. Kini mendukung upload file Excel!
+
 ## Features
 
 - 📚 Display Japanese vocabulary (Kanji, Hiragana, Reading, Meaning)
 - ⏭️ Navigate forward/backward between cards
 - 👁️ Toggle to hide/show readings and meanings
 - 📱 Simple and user-friendly GUI interface
-- 📊 Read data from Excel files (.xlsx)
+- 📊 Upload and read data from Excel files (.xlsx, .xls)
+- 📁 File selection dialog to choose any Excel file
 
 ## Prerequisites
 
@@ -29,11 +32,13 @@ A simple flashcard application for learning Japanese vocabulary with a GUI inter
    go mod tidy
    ```
 
-3. **Prepare data.xlsx file** with the format:
+3. **Prepare your Excel file** with the format:
    | Kanji | Hiragana | Reading | Meaning |
    |-------|----------|---------|---------|
    | 私 | わたし | watashi | I/me |
    | 本 | ほん | hon | book |
+   
+   Save as `.xlsx` or `.xls` format
 
 ## How to Run
 
@@ -65,21 +70,37 @@ go build -o flashcard-mac main.go
 
 ## Usage
 
-1. Make sure `data.xlsx` file is in the same folder as the executable
-2. Run the application
-3. Use `<` and `>` buttons for navigation
-4. Click "Hide" button to hide reading or meaning
-5. Study vocabulary by hiding answers first
+1. Run the application
+2. Click "Select Excel file" button to choose your vocabulary file
+3. Browse and select your `.xlsx` or `.xls` file containing Japanese vocabulary
+4. Once loaded, use `<` and `>` buttons for navigation
+5. Click "Hide" button to hide reading or meaning
+6. Study vocabulary by hiding answers first
+
+### File Selection Interface
+The application will display a welcome screen asking you to select an Excel file. The file dialog supports both `.xlsx` and `.xls` formats.
+
+## Screenshots
+
+### Step 1: Welcome Screen
+![Select Excel File](img/select_1.png)
+
+### Step 2: File Selection Dialog
+![Browse Files](img/select2_2.png)
+
+### Step 3: Flashcard Interface
+![Flashcard View](img/flashcard.png)
 
 ## Excel File Format
 
-The `data.xlsx` file must have the following structure:
+Your Excel file must have the following structure:
 - **Sheet1** with columns:
   - Column A: Kanji
   - Column B: Hiragana  
   - Column C: Reading (romaji)
   - Column D: Meaning (Indonesian/English)
 - First row as header (will be ignored)
+- Supports both `.xlsx` and `.xls` formats
 
 ## Troubleshooting
 
@@ -87,9 +108,11 @@ The `data.xlsx` file must have the following structure:
 - Install TDM-GCC or MinGW-w64
 - Make sure gcc is in PATH
 
-### Error "cannot find data.xlsx"
-- Make sure data.xlsx file is in the same folder as the executable
-- Check the format and content of the Excel file
+### Error loading Excel file
+- Make sure the selected file is in `.xlsx` or `.xls` format
+- Check that the Excel file has the correct column structure
+- Ensure the file is not corrupted or password protected
+- Verify the file contains data in the expected format
 
 ### GUI doesn't appear
 - Make sure all Fyne dependencies are installed
