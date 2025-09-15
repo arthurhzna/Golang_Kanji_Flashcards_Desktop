@@ -1,112 +1,112 @@
 # Japanese Flashcard Application
 
-Aplikasi flashcard sederhana untuk belajar kosakata bahasa Jepang dengan tampilan GUI menggunakan Fyne.
+A simple flashcard application for learning Japanese vocabulary with a GUI interface using Fyne.
 
-## Fitur
+## Features
 
-- 📚 Menampilkan kosakata Jepang (Kanji, Hiragana, Bacaan, Arti)
-- ⏭️ Navigasi maju/mundur antar kartu
-- 👁️ Toggle untuk menyembunyikan/menampilkan bacaan dan arti
-- 📱 Interface GUI yang simpel dan mudah digunakan
-- 📊 Membaca data dari file Excel (.xlsx)
+- 📚 Display Japanese vocabulary (Kanji, Hiragana, Reading, Meaning)
+- ⏭️ Navigate forward/backward between cards
+- 👁️ Toggle to hide/show readings and meanings
+- 📱 Simple and user-friendly GUI interface
+- 📊 Read data from Excel files (.xlsx)
 
-## Prasyarat
+## Prerequisites
 
 ### Windows
 1. **Install GCC Compiler**
-   - Download dan install TDM-GCC dari: https://jmeubank.github.io/tdm-gcc/
-   - Atau install MinGW-w64
+   - Download and install TDM-GCC from: https://jmeubank.github.io/tdm-gcc/
+   - Or install MinGW-w64
 
 2. **Install Go**
-   - Download dari: https://golang.org/dl/
-   - Versi minimum: Go 1.16+
+   - Download from: https://golang.org/dl/
+   - Minimum version: Go 1.16+
 
-## Instalasi
+## Installation
 
-1. **Clone atau download project ini**
+1. **Clone or download this project**
 2. **Install dependencies:**
    ```bash
    go mod tidy
    ```
 
-3. **Siapkan file data.xlsx** dengan format:
-   | Kanji | Hiragana | Bacaan | Arti |
-   |-------|----------|--------|------|
-   | 私 | わたし | watashi | saya |
-   | 本 | ほん | hon | buku |
+3. **Prepare data.xlsx file** with the format:
+   | Kanji | Hiragana | Reading | Meaning |
+   |-------|----------|---------|---------|
+   | 私 | わたし | watashi | I/me |
+   | 本 | ほん | hon | book |
 
-## Cara Menjalankan
+## How to Run
 
-### Menjalankan langsung
+### Run directly
 ```bash
 go run main.go
 ```
 
-### Compile menjadi executable
+### Compile to executable
 ```bash
-# Untuk Windows
+# For Windows
 go build -o flashcard.exe main.go
 
-# Untuk sistem lain
+# For other systems
 go build -o flashcard main.go
 ```
 
-Setelah di-compile, Anda tinggal double-click file `flashcard.exe` untuk menjalankannya.
+After compilation, you can simply double-click the `flashcard.exe` file to run it.
 
-### Cross-compile untuk OS lain
+### Cross-compile for other OS
 ```bash
-# Untuk Linux dari Windows
+# For Linux from Windows
 set GOOS=linux
 set GOARCH=amd64
 go build -o flashcard-linux main.go
 
-# Untuk macOS dari Windows  
+# For macOS from Windows  
 set GOOS=darwin
 set GOARCH=amd64
 go build -o flashcard-mac main.go
 ```
 
-## Penggunaan
+## Usage
 
-1. Pastikan file `data.xlsx` ada di folder yang sama dengan executable
-2. Jalankan aplikasi
-3. Gunakan tombol `<` dan `>` untuk navigasi
-4. Klik tombol "Hide" untuk menyembunyikan bacaan atau arti
-5. Pelajari kosakata dengan cara menyembunyikan jawaban terlebih dahulu
+1. Make sure `data.xlsx` file is in the same folder as the executable
+2. Run the application
+3. Use `<` and `>` buttons for navigation
+4. Click "Hide" button to hide reading or meaning
+5. Study vocabulary by hiding answers first
 
-## Format File Excel
+## Excel File Format
 
-File `data.xlsx` harus memiliki struktur:
-- **Sheet1** dengan kolom:
-  - Kolom A: Kanji
-  - Kolom B: Hiragana  
-  - Kolom C: Bacaan (romaji)
-  - Kolom D: Arti (bahasa Indonesia)
-- Baris pertama sebagai header (akan diabaikan)
+The `data.xlsx` file must have the following structure:
+- **Sheet1** with columns:
+  - Column A: Kanji
+  - Column B: Hiragana  
+  - Column C: Reading (romaji)
+  - Column D: Meaning (Indonesian/English)
+- First row as header (will be ignored)
 
 ## Troubleshooting
 
 ### Error "gcc not found"
-- Install TDM-GCC atau MinGW-w64
-- Pastikan gcc ada di PATH
+- Install TDM-GCC or MinGW-w64
+- Make sure gcc is in PATH
 
 ### Error "cannot find data.xlsx"
-- Pastikan file data.xlsx ada di folder yang sama dengan executable
-- Periksa format dan isi file Excel
+- Make sure data.xlsx file is in the same folder as the executable
+- Check the format and content of the Excel file
 
-### GUI tidak muncul
-- Pastikan semua dependencies Fyne terinstall
-- Coba jalankan: `go mod tidy`
+### GUI doesn't appear
+- Make sure all Fyne dependencies are installed
+- Try running: `go mod tidy`
 
 ## Dependencies
 
-- `github.com/xuri/excelize/v2` - untuk membaca file Excel
-- `fyne.io/fyne/v2` - untuk GUI framework
+- `github.com/xuri/excelize/v2` - for reading Excel files
+- `fyne.io/fyne/v2` - for GUI framework
 
-## Kontribusi
+## Contributing
 
-Silakan buat issue atau pull request untuk perbaikan dan penambahan fitur.
+Please create issues or pull requests for improvements and new features.
 
-## Lisensi
+## License
 
-Project ini bebas digunakan untuk tujuan pembelajaran.
+This project is free to use for educational purposes.
